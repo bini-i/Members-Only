@@ -2,12 +2,16 @@
 
 <% @posts.each do |post| %>
     <ul>
-        <li > 
+        <li >
             <% if user_signed_in? %>
-                posted by <%= post.user.name %>
+                posted by <%= gravatar_image_tag(post.user.email.gsub('spam', 'mdeering'), alt: post.user.name )  %>  <%= post.user.name %>
             <% end %>
             <%= link_to post.title, post_path(post) %>
         </li>
     </ul>
 
+<% end %>
+
+<% if user_signed_in? %>
+    <%= link_to  "Create a new post", new_post_path, class: "btn btn-dark" %>
 <% end %>

@@ -3,3 +3,7 @@
 </h1>
 
 <p><%= @post.body %></p>
+<p>Posted by <%= gravatar_image_tag(@post.user.email.gsub('spam', 'mdeering'), alt: @post.user.name )  %> <%= @post.user.name  %></p>
+
+<%= link_to  "Edit", edit_post_path(@post), class: "btn btn-success" %>
+<%= link_to  "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>

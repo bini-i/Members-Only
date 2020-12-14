@@ -1,55 +1,52 @@
 class PostsController < ApplicationController
-    before_action :authenticate_user!, except: [:index]
-    before_action :get_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
+  before_action :get_post, only: %i[show edit update destroy]
 
-    def index
-        @posts = Post.all
-    end
+  def index
+    @posts = Post.all
+  end
 
-    def show
-    end
+  def show; end
 
-    def new
-        @post = Post.new
-    end
-    
-    def create
-        @post = Post.new(post_params)
-        if @post.save
-            flash[:notice] = "successfully created"
-            redirect_to @post
-        else
-            render "new"
-        end
-    end
-    
-    def update
-        if @post.update(post_params)
-            flash[:notice] = "successfully updated"
-            redirect_to @post
-        else
-            render "edit"
-        end
-              
-    end
+  def new
+    @post = Post.new
+  end
 
-    def edit
-
+  def create
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    if @post.save
+      flash[:notice] = 'successfully created'
+      redirect_to @post
+    else
+      render 'new'
     end
+  end
 
-    def destroy
-        @post.destroy
-        flash[:notice] = "successfully destroyed"
-        redirect_to posts_path
+  def update
+    if @post.update(post_params)
+      flash[:notice] = 'successfully updated'
+      redirect_to @post
+    else
+      render 'edit'
     end
+  end
 
-    private
+  def edit; end
 
-    def post_params
-        params.require(:post).permit(:title, :body)
-    end
+  def destroy
+    @post.destroy
+    flash[:notice] = 'successfully destroyed'
+    redirect_to posts_path
+  end
 
-    def get_post
-        @post = Post.find(params[:id])
-    end
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+
+  def get_post
+    @post = Post.find(params[:id])
+  end
 end
