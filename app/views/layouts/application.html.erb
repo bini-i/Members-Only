@@ -11,6 +11,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <div class="container-fluid">
+    <%= render  "layouts/messages" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
