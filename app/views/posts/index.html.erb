@@ -1,0 +1,13 @@
+
+
+<% @posts.each do |post| %>
+    <ul>
+        <li > 
+            <% if user_signed_in? %>
+                posted by <%= post.user.name %>
+            <% end %>
+            <%= link_to post.title, post_path(post) %>
+        </li>
+    </ul>
+
+<% end %>
