@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :get_post, only: %i[show edit update destroy]
+  before_action :set_post, only: %i[show edit update destroy]
   before_action :require_same_user, only: %i[edit update destroy]
   def index
     @posts = Post.all
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body)
   end
 
-  def get_post
+  def set_post
     @post = Post.find(params[:id])
   end
 
