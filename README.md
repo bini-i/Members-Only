@@ -1,13 +1,14 @@
-# My members
-![Top Page Screenshot](./screenshot.png)
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Members Only
+![Top Page Screenshot](./app/assets/images/screenshot.png)
 
 ## About the Project
 
-This project is based on The [Odin Project: Authentication](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication). I built an exclusive clubhouse where the members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
+This project is based on The [Odin Project: Authentication](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication). we built an exclusive clubhouse where the members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
 
-I created User and Post model, controllers, dabatase and views with mainly three useful gems such as devise gem, devise-bootstrap-views gem and gravatar_image_tag gem. Plus, I'm using Bootstrap to organize layouts and all other views.
+We created User and Post model, controllers, dabatase and views with mainly three useful gems such as devise gem, devise-bootstrap-views gem and gravatar_image_tag gem. Plus, we are using Bootstrap to organize layouts and all other views.
 
-A list of commonly used resources that I find helpful is listed in the acknowledgments.
+A list of commonly used resources that we find helpful is listed in the acknowledgments.
 
 
 ## Table of Contents
@@ -28,7 +29,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 * [Ruby](https://www.ruby-lang.org/en/)
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [SASS(SCSS)](https://sass-lang.com/)
-* [Bootstrap4](https://www.mashrurhossain.com/blog/rails6bootstrap4)
+* [Bootstrap4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
 
 ## Live Demo

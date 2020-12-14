@@ -1,7 +1,14 @@
-
-<% if user_signed_in? %>
-    <%= link_to  "Create a new post", new_post_path, class: "btn btn-dark" %>
+ <% if user_signed_in? %>
+    <div class="jumbotron">
+    <h1 class="display-4">Hello, Member Only!</h1>
+    <p class="lead">only signed in users can see the author of each post</p>
+    <hr class="my-4">
+    <p class="lead">
+    <%= link_to  "Create a new post", new_post_path, class: "btn btn-primary btn-lg" %>
+    </p>
+    </div>
 <% end %>
+
 <div class="container d-flex">
     <% @posts.each do |post| %>
         <div class="card mr-3 p-3" style="width: 18rem;">
