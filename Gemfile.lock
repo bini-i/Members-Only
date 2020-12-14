@@ -87,6 +87,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
     erubi (1.10.0)
     ffi (1.13.1)
     globalid (0.4.2)
@@ -239,6 +240,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise (~> 4.2)
+  devise-bootstrap-views (~> 1.0)
   gravatar_image_tag (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
