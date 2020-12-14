@@ -32,11 +32,6 @@ A list of commonly used resources that we find helpful is listed in the acknowle
 * [Bootstrap4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
 
-## Live Demo
-
-[Live Demo Link](https://my-members.herokuapp.com/)
-
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
