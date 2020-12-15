@@ -1,0 +1,28 @@
+ <% if user_signed_in? %>
+    <div class="jumbotron">
+    <h1 class="display-4">Hello, Member Only!</h1>
+    <p class="lead">only signed in users can see the author of each post</p>
+    <hr class="my-4">
+    <p class="lead">
+    <%= link_to  "Create a new post", new_post_path, class: "btn btn-primary btn-lg" %>
+    </p>
+    </div>
+<% end %>
+
+<div class="container d-flex">
+    <% @posts.each do |post| %>
+        <div class="card mr-3 p-3" style="width: 18rem;">
+            <% if user_signed_in? %>
+                posted by <%= gravatar_image_tag(post.user.email.gsub('spam', 'mdeering'), alt: post.user.name, class: "" )  %>  <%= post.user.name %>
+            <% end %>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= link_to post.title, post_path(post) %>
+                </h5>
+                <p class="card-text">
+                    <%= post.body %>
+                </p>
+            </div>
+        </div>
+    <% end %>
+</div>
